@@ -8,9 +8,19 @@ const user = {
     city: "Pune",
     state: "MH",
   },
-  name:"neha"
+  name: "neha",
 };
 
+// for (let key in user) {
+//   console.log(key, ":", user[key]);
+// }
+
 for (let key in user) {
-  console.log(key, ":", user[key]);
+  if (typeof user[key] === "object" && user[key] !== null) {
+    for (let key2 in user[key]) {
+      console.log(key2, ": ", user[key][key2]);
+    }
+  } else {
+    console.log(key, ":", user[key]);
+  }
 }
